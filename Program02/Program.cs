@@ -17,8 +17,30 @@ namespace Program02
 
         void Start()
         {
+            Person p1 = new Person();
+            p1 = ReadPerson();
+        }
 
+        Person ReadPerson()
+        {
+            
 
+        }
+
+        void PrintPerson(Person p)
+        {
+
+        }
+
+        int ReadInt(string question)
+        {
+            Console.Write(question);
+            return int.Parse(Console.ReadLine());
+        }
+        string ReadString(string question)
+        {
+            Console.Write(question);
+            return Console.ReadLine();
         }
 
     }
