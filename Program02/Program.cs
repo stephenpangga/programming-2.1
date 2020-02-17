@@ -19,17 +19,23 @@ namespace Program02
         {
             Person p1 = new Person();
             p1 = ReadPerson();
+            PrintPerson(p1);
         }
 
         Person ReadPerson()
         {
-            
+            Person p = new Person();
+            p.FirstName = ReadString("What is your First name: ");
+            p.LastName = ReadString("What is your Last name: ");
+            p.age = ReadInt("What is your Age: ");
+            p.city = ReadString("Where are you from: ");
 
+            return p;
         }
 
         void PrintPerson(Person p)
         {
-
+            Console.WriteLine($"{p.FirstName}, {p.LastName}, {p.age}, {p.city}");
         }
 
         int ReadInt(string question)
