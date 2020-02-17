@@ -44,12 +44,22 @@ namespace Program01
         {
             bool whichMonth = false;
 
+            int number = 0;
             while(whichMonth == false)
             {
+                Console.Write(question);
+                number = int.Parse(Console.ReadLine());
 
+                if(Enum.IsDefined(typeof(Month), number))
+                {
+                    whichMonth = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{number} is not a valid value.");
+                }
             }
-            Console.Write(question);
-            int number = int.Parse(Console.ReadLine());
+            
             return (Month)number;
         }
     }
