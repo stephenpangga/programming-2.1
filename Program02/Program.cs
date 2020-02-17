@@ -10,6 +10,16 @@ namespace Program02
     {
         static void Main(string[] args)
         {
+            Program myProgram = new Program();
+            myProgram.Start();
+            Console.ReadKey();
         }
+
+        void Start()
+        {
+
+
+        }
+
     }
 }
