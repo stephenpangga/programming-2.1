@@ -42,6 +42,12 @@ namespace Program01
         }
         Month ReadMonth(string question)
         {
+            bool whichMonth = false;
+
+            while(whichMonth == false)
+            {
+
+            }
             Console.Write(question);
             int number = int.Parse(Console.ReadLine());
             return (Month)number;
