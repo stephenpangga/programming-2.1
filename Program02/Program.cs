@@ -17,34 +17,45 @@ namespace Program02
 
         void Start()
         {
-            Person p1 = new Person();
-            p1 = ReadPerson();
-            PrintPerson(p1);
+            Person[] person = new Person[3];
+            for(int i=0; i<person.Length; i++)
+            {
+                person[i]= ReadPerson();
+                Console.WriteLine();
+            }
+            // to show
+            for(int j=0; j<person.Length; j++)
+            {
+                PrintPerson(person[j]);
+            }
         }
 
         Person ReadPerson()
         {
             Person p = new Person();
-            p.FirstName = ReadString("What is your First name: ");
-            p.LastName = ReadString("What is your Last name: ");
-            p.age = ReadInt("What is your Age: ");
-            p.city = ReadString("Where are you from: ");
-            p.gender = ReadGender("what is your gender (m/f): ");
+            p.FirstName = ReadString("Enter First name: ");
+            p.LastName = ReadString("Enter Last name: ");
+            p.gender = ReadGender("Enter gender (m/f): ");
+            p.age = ReadInt("Enter Age: ");
+            p.city = ReadString("Enter city: ");
 
             return p;
         }
 
         void PrintPerson(Person p)
         {
-            Console.WriteLine($"{p.FirstName}, {p.LastName}, {p.age}, {p.city}");
+            Console.Write($"{p.FirstName} {p.LastName}");
             PrintGender(p.gender);
+            Console.WriteLine();
+            Console.WriteLine($" {p.age}, {p.city}");
+            Console.WriteLine();//spacing
         }
 
         GenderType ReadGender(string question)
         {
             Console.Write(question);
             string input = Console.ReadLine();
-            GenderType gender;
+            GenderType gender = GenderType.Male;
             if(input == "m")
             {
                 gender = GenderType.Male;
@@ -61,11 +72,11 @@ namespace Program02
         {
             if(gender == GenderType.Male)
             {
-                Console.Write("m");
+                Console.Write("(m)");
             }
             else if(gender == GenderType.Female)
             {
-                Console.Write("f");
+                Console.Write("(f)");
             }
         }
 
