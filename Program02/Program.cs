@@ -28,10 +28,15 @@ namespace Program02
             {
                 PrintPerson(person[j]);
             }
+
+
+            Console.WriteLine("Birthday");
+            CelebrateBirthday(ref person[0]);
+            PrintPerson(person[0]);
         }
 
         Person ReadPerson()
-        {
+        {   
             Person p = new Person();
             p.FirstName = ReadString("Enter First name: ");
             p.LastName = ReadString("Enter Last name: ");
@@ -68,6 +73,11 @@ namespace Program02
             return gender;
             //maybe need a check that the user place m or f
         }
+        void CelebrateBirthday(ref Person p)
+        {
+            p.age = p.age + 1;
+        }
+
         void PrintGender(GenderType gender)
         {
             if(gender == GenderType.Male)
