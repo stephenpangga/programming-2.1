@@ -29,6 +29,7 @@ namespace Program02
             p.LastName = ReadString("What is your Last name: ");
             p.age = ReadInt("What is your Age: ");
             p.city = ReadString("Where are you from: ");
+            p.gender = ReadGender("what is your gender (m/f): ");
 
             return p;
         }
@@ -36,6 +37,36 @@ namespace Program02
         void PrintPerson(Person p)
         {
             Console.WriteLine($"{p.FirstName}, {p.LastName}, {p.age}, {p.city}");
+            PrintGender(p.gender);
+        }
+
+        GenderType ReadGender(string question)
+        {
+            Console.Write(question);
+            string input = Console.ReadLine();
+            GenderType gender;
+            if(input == "m")
+            {
+                gender = GenderType.Male;
+            }
+            else if(input == "f")
+            {
+                gender = GenderType.Female;
+            }
+
+            return gender;
+            //maybe need a check that the user place m or f
+        }
+        void PrintGender(GenderType gender)
+        {
+            if(gender == GenderType.Male)
+            {
+                Console.Write("m");
+            }
+            else if(gender == GenderType.Female)
+            {
+                Console.Write("f");
+            }
         }
 
         int ReadInt(string question)

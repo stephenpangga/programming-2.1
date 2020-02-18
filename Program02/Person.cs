@@ -12,5 +12,6 @@ namespace Program02
         public string LastName;
         public int age;
         public string city;
+        public GenderType gender;
     }
 }
