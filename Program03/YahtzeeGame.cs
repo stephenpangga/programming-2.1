@@ -32,10 +32,26 @@ namespace Program03
             {
                 dice[i].DisplayValue();
             }
+            Console.WriteLine(); //spacing.
         }
 
         public bool Yahtzee()
         {
+            for (int i = 0; i <dice.Length; i++)
+            {
+                if(dice[0].value != dice[i].value)
+                {
+                    //if the 1st dice is not the same as the rest, a checker for yahtzee combination
+                    //return false.
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool ThreeOfAkind()
+        {
+            //i dont really know how to do this.. also for 4 of a kind.
             return true;
         }
     }
