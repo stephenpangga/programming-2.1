@@ -33,5 +33,10 @@ namespace Program03
                 dice[i].DisplayValue();
             }
         }
+
+        public bool Yahtzee()
+        {
+            return true;
+        }
     }
 }
